@@ -1,0 +1,243 @@
+.main {
+  margin: 0 20%;
+  background-color: #fff;
+  margin-top: 10%;
+  padding: 5rem;
+  border-radius: 0.5rem;
+}
+.mainBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+  width: 45%;
+}
+.card a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.formBlock {
+  background-color: #fff;
+  padding: 5rem;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.formInner {
+  background-color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.formInner div {
+  margin-bottom: 1rem;
+}
+label {
+  width: 10rem;
+  font-size: 0.75rem;
+}
+.btn {
+  font-size: 0.75rem;
+   padding: 2px
+}
+
+.tableBlock {
+  height: 100%;
+  background-color: #fff;
+  padding: 5rem;
+}
+.noData {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: grey;
+}
+.panel-title {
+  font-size: 1.25rem;
+}
+.table th,
+.table td {
+  font-size: 0.75rem;
+}
+.table tr:nth-child(odd) {
+  background-color: #efeaea;
+}
+@media screen and (max-width: 425px) {
+  .main {
+    margin: 25% 5%;
+    padding: 1rem;
+  }
+  .card {
+    width: 100%;
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  .mainBlock {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .mainBlock :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/* StockComponent styles */
+
+.stockContainer {
+  background-color:white;
+  border: 2px solid black;
+  margin: 5px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.float-child {
+  float: left;
+  padding: 100px;
+  border: 2px solid red;
+}
+.list-books-content li {
+  display: flex;
+  flex-direction: row;
+}
+.btns{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.table{
+  border: 2px solid rgb(72, 112, 241);
+  width: 200px;
+  height: 50px;
+  
+}
+.tableContainer{
+  border-collapse: collapse;
+
+}
+th {
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+  
+td {
+  text-align: center;
+}
+.stock-heading{
+    text-align: Center;
+    font-weight: bold;
+    color:mediumblue;
+}
+.products{
+  margin:10px;
+  text-align: center;
+  color:darkblue;
+  text-align: center;
+}
+.noproducts-img{
+  height:150px;
+  width:350px;
+}
+
+.add-item{
+  margin-bottom: 10px;
+  border: none;
+  border-width: 0px;
+  color:white;
+  
+}
+.add-btn{
+  height: 30px;
+  width:80px;
+  font-weight: bold;
+  color:white;
+  margin:5px;
+}
+.cancel-btn{
+  height: 30px;
+  width:80px;
+  font-weight: bold;
+  color:white;
+  margin:10px;
+}
+.product-name{
+  font-size: 15px;
+  font-weight: bold;
+}
+.stock-btn{
+  height: 50px;
+  width:100px;
+  font-weight: bold;
+  color:white
+}
+.top-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.label{
+  font-size: 20px;
+  color:black;
+  font-weight: bold;
+  width:300px
+  
+}
+
+@media screen and (max-width:576px){
+  .table{
+    border: 2px solid rgb(72, 112, 241);
+    width: 50px;
+    height: 20px;
+    margin:1px;
+    
+  }
+  .main {
+    margin: 0 20%;
+    background-color: #fff;
+    margin-top: 10%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  .tableBlock {
+    height: 100%;
+    background-color: #fff;
+    padding: 1rem;
+  }
+  .label{
+    font-size: 1z0px;
+    color:black;
+    font-weight: bold;
+    width:150px
+    
+  }
+  .stock-heading{
+    text-align: Center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 10px;
+}
+.products{
+  font-size: 15px;
+  margin:10px;
+  text-align: center;
+  color:darkblue;
+  text-align: center;
+}
+
+}
+.select{
+  border: 1px solid blue;
+  border-radius: 5px;
+  color:blue;
+  
+  
+}

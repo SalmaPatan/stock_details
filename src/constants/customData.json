@@ -1,0 +1,50 @@
+[
+  {
+    "sellerName": "Grill",
+    "productName": "TRIMMER",
+    "price": "200",
+    "quantity": 1,
+    "totalAmount": "0",
+    "id": 1
+  },
+  {
+    "sellerName": "Rahul",
+    "productName": "HAIR CONDITIONER",
+    "price": "300",
+    "quantity": 1,
+    "totalAmount": "600",
+    "id": 2
+  },
+  {
+    "sellerName": "Mikel",
+    "productName": "SHAMPOO",
+    "price": "400",
+    "quantity": 1,
+    "totalAmount": "600",
+    "id": 3
+  },
+  {
+    "sellerName": "John",
+    "productName": "NUT MIX",
+    "price": "500",
+    "quantity": 1,
+    "totalAmount": "600",
+    "id": 4
+  },
+  {
+    "sellerName": "Robert",
+    "productName": "NUT 'N BERRY MIX",
+    "price": "600",
+    "quantity": 1,
+    "totalAmount": "600",
+    "id": 5
+  },
+  {
+    "sellerName": "Spicy",
+    "productName": "PEANUT BUTTER",
+    "price": "700",
+    "quantity": 1,
+    "totalAmount": "600",
+    "id": 6
+  }
+]
