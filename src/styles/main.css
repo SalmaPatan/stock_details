@@ -42,7 +42,7 @@ label {
 }
 .btn {
   font-size: 0.75rem;
-   padding: 2px
+  padding: 2px;
 }
 
 .tableBlock {
@@ -86,12 +86,10 @@ label {
   }
 }
 
-
-
 /* StockComponent styles */
 
 .stockContainer {
-  background-color:white;
+  background-color: white;
   border: 2px solid black;
   margin: 5px;
   border-radius: 10px;
@@ -108,97 +106,91 @@ label {
   display: flex;
   flex-direction: row;
 }
-.btns{
+.btns {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.table{
+.table {
   border: 2px solid rgb(72, 112, 241);
   width: 200px;
   height: 50px;
-  
 }
-.tableContainer{
+.tableContainer {
   border-collapse: collapse;
-
 }
 th {
   border-bottom: 1px solid black;
   text-align: center;
 }
-  
+
 td {
   text-align: center;
 }
-.stock-heading{
-    text-align: Center;
-    font-weight: bold;
-    color:mediumblue;
+.stock-heading {
+  text-align: Center;
+  font-weight: bold;
+  color: mediumblue;
 }
-.products{
-  margin:10px;
+.products {
+  margin: 10px;
   text-align: center;
-  color:darkblue;
+  color: darkblue;
   text-align: center;
 }
-.noproducts-img{
-  height:150px;
-  width:350px;
+.noproducts-img {
+  height: 150px;
+  width: 350px;
 }
 
-.add-item{
+.add-item {
   margin-bottom: 10px;
   border: none;
   border-width: 0px;
-  color:white;
-  
+  color: white;
 }
-.add-btn{
+.add-btn {
   height: 30px;
-  width:80px;
+  width: 80px;
   font-weight: bold;
-  color:white;
-  margin:5px;
+  color: white;
+  margin: 5px;
 }
-.cancel-btn{
+.cancel-btn {
   height: 30px;
-  width:80px;
+  width: 80px;
   font-weight: bold;
-  color:white;
-  margin:10px;
+  color: white;
+  margin: 5px;
 }
-.product-name{
+.product-name {
   font-size: 15px;
   font-weight: bold;
 }
-.stock-btn{
-  height: 50px;
-  width:100px;
+.stock-btn {
   font-weight: bold;
-  color:white
+  padding: 8px;
+  color: white;
 }
-.top-section{
+.top-section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.label{
+.label {
   font-size: 20px;
-  color:black;
+  color: black;
   font-weight: bold;
-  width:300px
-  
+  width: 300px;
 }
 
-@media screen and (max-width:576px){
-  .table{
+@media screen and (max-width: 576px) {
+  .table {
     border: 2px solid rgb(72, 112, 241);
     width: 50px;
     height: 20px;
-    margin:1px;
-    
+    margin: 1px;
   }
   .main {
     margin: 0 20%;
@@ -212,32 +204,28 @@ td {
     background-color: #fff;
     padding: 1rem;
   }
-  .label{
+  .label {
     font-size: 1z0px;
-    color:black;
+    color: black;
     font-weight: bold;
-    width:150px
-    
+    width: 150px;
   }
-  .stock-heading{
+  .stock-heading {
     text-align: Center;
     font-weight: bold;
     font-size: 20px;
     padding-top: 10px;
+  }
+  .products {
+    font-size: 15px;
+    margin: 10px;
+    text-align: center;
+    color: darkblue;
+    text-align: center;
+  }
 }
-.products{
-  font-size: 15px;
-  margin:10px;
-  text-align: center;
-  color:darkblue;
-  text-align: center;
-}
-
-}
-.select{
+.select {
   border: 1px solid blue;
   border-radius: 5px;
-  color:blue;
-  
-  
+  color: blue;
 }

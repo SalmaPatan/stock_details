@@ -8,6 +8,7 @@ import {
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import { ROUTER_URL_CONSTANT } from "./constants/routerUrlConstant";
+import InventoryInfo from "./pages/InventoryInfo";
 import StockComponent from "./pages/StockComponent";
 
 export default function App() {
@@ -22,6 +23,10 @@ export default function App() {
         <Route
           path={ROUTER_URL_CONSTANT.STOCK_PAGE}
           component={StockComponent}
+        />
+          <Route
+          path={ROUTER_URL_CONSTANT.INVENTORY_INFO_PAGE}
+          component={InventoryInfo}
         />
       </Switch>
     </Router>

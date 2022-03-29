@@ -1,15 +1,22 @@
 import React from "react";
+import { useHistory } from 'react-router-dom'
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { userDataActionTypes, userDataSelectors } from "../store/userData";
 import "../styles/main.css";
 import JSON_STOCK from "../constants/customData.json";
+import { ROUTER_URL_CONSTANT } from "../constants/routerUrlConstant";
+import NoStock from "../components/noStock";
 
-export default function StockComponent() {
+export default function StockUpdate() {
   const dispatch = useDispatch();
+  const history = useHistory()
+
   const userStockData = useSelector(userDataSelectors.getUserStock);
   const [stockData, setStockData] = React.useState([] as any);
+  const [previewStock, setPreviewStock] = React.useState([] as any);
   const [value, setValue] = React.useState('1');
+
 
   React.useEffect(() => {
     setStockData(JSON_STOCK);
@@ -17,7 +24,8 @@ export default function StockComponent() {
 
   const handleChange = (event: any) => {
     setValue(event.target.value);
-
+    const index = event.target.value - 1;
+    setPreviewStock((previewStock: any) => [...previewStock, stockData[index]]);
   };
 
   const addStock = (selectedStock: any) => {
@@ -47,17 +55,14 @@ export default function StockComponent() {
     }
   };
 
-  const deleteStock = (selectedStock: any) => {
-    selectedStock.quantity = 1;
-    dispatch({
-      type: userDataActionTypes.DELETE_STOCK,
-      payload: {
-        data: selectedStock,
-        loader: false,
-        error: false,
-      },
-    });
+  const deleteStock = (selectedStock: any, i: number) => {
+    const filteredStock = previewStock.filter((item: any) => item.id !== selectedStock.id);
+    setPreviewStock(filteredStock);
+
   };
+  const gotoInventory = () => {
+    history.push(ROUTER_URL_CONSTANT.INVENTORY_INFO_PAGE)
+  }
 
   return (
     <div className="tableBlock">
@@ -74,32 +79,8 @@ export default function StockComponent() {
           </label>
         </div>
         <div>
-          <Button className="stock-btn">Stock Request</Button>
+          <Button className="stock-btn" onClick={() => gotoInventory()}>Stock Update</Button>
         </div>
-      </div>
-
-      <h1 className="stock-heading">Stock Available </h1>
-      <div className="row" >
-        {stockData.map((item: any, i: number) => {
-          return (
-            <div className="col md-4 stockContainer">
-              <>
-                <div>
-                  <br />
-                  <h1 className="product-name">{item.productName}</h1>
-                  <p>SellerName:{item.sellerName}</p>
-                  <p>Rs {item.price}/-</p>
-                </div>
-                <div className="add-item">
-                  <Button onClick={() => addStock(item)} variant="primary" className="add-btn">
-                    Add Item
-                  </Button>
-
-                </div>
-              </>
-            </div>
-          );
-        })}
       </div>
       <div className="noData"></div>
       <h1 className="stock-heading">Stock Details</h1>
@@ -107,63 +88,44 @@ export default function StockComponent() {
         <table className="tableContainer">
           <tr>
             <th className="table">SellerName</th>
-            <th className="table">ProductId</th>
+            <th className="table">Product Quantity</th>
             <th className="table">ProductName</th>
             <th className="table">Price</th>
-            <th className="table">Quanitity</th>
-            <th className="table">Total Amount</th>
+            <th className="table">Save Item</th>
             <th className="table">Cancel Item</th>
           </tr>
 
-          {userStockData.data?.map((item: any, i: number) => {
-            const total = item.quantity * item.price
+          {previewStock?.map((item: any, i: number) => {
             return (
               <>
                 <tr>
-
                   <td className="table">{item.sellerName}</td>
-                  <td className="table">{item.id}</td>
+                  <td className="table">{item.quantity}</td>
                   <td className="table">{item.productName}</td>
                   <td className="table">{item.price}</td>
-                  <td className="table">{item.quantity}</td>
-                  <td className="table">{total}</td>
-                  <td className="table"><div style={{ marginTop: 5 }}>
+                  <td className="table">
                     <div className="btns">
-                      <Button onClick={() => deleteStock(item)} variant="primary" className="cancel-btn">
+                      <Button onClick={() => addStock(item)} variant="primary" className="cancel-btn">
+                        Add Item
+                      </Button>
+                    </div>
+                  </td>
+                  <td className="table">
+                    <div className="btns">
+                      <Button onClick={() => deleteStock(item, i)} variant="primary" className="cancel-btn">
                         Cancel Item
                       </Button>
-
                     </div>
-                  </div>
                   </td>
-
                 </tr>
-
               </>
-
             );
-
           })}
-
-
         </table>
       </div>
-      {userStockData?.data?.length === 0 && (
-        <div className="noData">
-          <div >
-            <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-error-view-img.png" className="noproducts-img" alt="products" />
-            <h1 className="products">No Products Added</h1>
-          </div>
-
-        </div>
+      {previewStock?.length === 0 && (
+        <NoStock />
       )}
-
-
-
-
-
-
-
     </div>
   );
 }
